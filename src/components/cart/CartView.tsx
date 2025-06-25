@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useApiCart } from "@/hooks/useApiCart";
+import { useCart } from "@/contexts/ApiCartContext";
 import { CartItemCard } from "./CartItemCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,7 +10,7 @@ import { ShoppingBag, ArrowRight, Loader2 } from "lucide-react";
 import { GrocerySuggestions } from "@/components/recommendations/GrocerySuggestions";
 
 export function CartView() {
-  const { items, totalAmount: cartTotalAmount, loading, error } = useApiCart();
+  const { items, totalAmount: cartTotalAmount, loading, error } = useCart();
 
   if (loading) {
     return (

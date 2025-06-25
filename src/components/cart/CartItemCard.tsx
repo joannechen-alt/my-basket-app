@@ -5,7 +5,7 @@ import type { CartItem } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trash2 } from "lucide-react";
-import { useApiCart } from "@/hooks/useApiCart";
+import { useCart } from "@/contexts/ApiCartContext";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
@@ -14,7 +14,7 @@ interface CartItemCardProps {
 }
 
 export function CartItemCard({ item }: CartItemCardProps) {
-  const { removeFromCart } = useApiCart();
+  const { removeFromCart } = useCart();
   const { toast } = useToast();
   const [isRemoving, setIsRemoving] = useState(false);
 

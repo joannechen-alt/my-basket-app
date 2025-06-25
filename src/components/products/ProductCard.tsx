@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShoppingCart } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { useApiCart } from "@/hooks/useApiCart";
+import { useCart } from "@/contexts/ApiCartContext";
 import { useState } from "react";
 
 interface ProductCardProps {
@@ -15,7 +15,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { toast } = useToast();
-  const { addToCart } = useApiCart();
+  const { addToCart } = useCart();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleAddToCart = async () => {

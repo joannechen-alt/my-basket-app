@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { ShoppingCart, Package, HomeIcon, Receipt } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useApiCart } from "@/hooks/useApiCart";
+import { useCart } from "@/contexts/ApiCartContext";
 import { Badge } from "@/components/ui/badge";
 
 export function Header() {
-  const { totalCartItems } = useApiCart();
+  const { totalCartItems } = useCart();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

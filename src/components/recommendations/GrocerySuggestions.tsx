@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useApiCart } from "@/hooks/useApiCart";
+import { useCart } from "@/contexts/ApiCartContext";
 import { apiClient } from "@/lib/api/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,7 @@ import { Loader2, Lightbulb } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export function GrocerySuggestions() {
-  const { items: cartItems } = useApiCart();
+  const { items: cartItems } = useCart();
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

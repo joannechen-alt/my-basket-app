@@ -1,6 +1,6 @@
 "use client";
 
-import { useApiCart } from "@/hooks/useApiCart";
+import { useCart } from "@/contexts/ApiCartContext";
 import type { CartItem, Order } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,7 +15,7 @@ import { apiClient } from "@/lib/api/client";
 import { getUserId } from "@/lib/session";
 
 export function OrderReviewClient() {
-  const { items, totalAmount: cartTotalAmount, clearCart, loading, error } = useApiCart();
+  const { items, totalAmount: cartTotalAmount, clearCart, loading, error } = useCart();
   const { toast } = useToast();
   const router = useRouter();
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
