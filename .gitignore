@@ -45,3 +45,5 @@ next-env.d.ts
 firebase-debug.log
 firestore-debug.log
 microservices/ai-service/node_modules/
+
+package-lock.json
