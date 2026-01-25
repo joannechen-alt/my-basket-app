@@ -1,0 +1,17 @@
+## 🧪 Test Cases
+
+| Test ID | Type | Description | Test Steps | Expected Result |
+|---------|------|-------------|------------|-----------------|
+| **TC-O-030** | Edge | Create order with very large item quantity | 1. Send POST request to `/api/orders`<br>2. Body with item: `{ productId: "p1", name: "Mouse", price: 29.99, quantity: 999999 }`<br>3. Verify response | - Status: 201<br>- Order created<br>- totalAmount: 29,998,970.01<br>- Large numbers handled correctly |
+| **TC-O-031** | Edge | Create order with very small decimal price | 1. Send POST request to `/api/orders`<br>2. Body with item: `{ productId: "p1", name: "Item", price: 0.01, quantity: 1 }`<br>3. Verify response | - Status: 201<br>- Order created<br>- totalAmount: 0.01<br>- Precision maintained (2 decimals) |
+| **TC-O-032** | Edge | Create order with many decimal places in price | 1. Send POST request to `/api/orders`<br>2. Body with item: `{ productId: "p1", name: "Item", price: 29.9999, quantity: 1 }`<br>3. Verify response | - Status: 201<br>- Order created<br>- totalAmount rounded to 2 decimals: 30.00<br>- Rounding applied correctly |
+| **TC-O-033** | Edge | Create order with many items (stress test) | 1. Send POST request to `/api/orders`<br>2. Body with 100 different items<br>3. Verify response | - Status: 201<br>- Order created<br>- All items included<br>- totalAmount correctly summed |
+| **TC-O-034** | Edge | Create order with very large order total | 1. Send POST request to `/api/orders`<br>2. Body with 10 items @ $9,999.99 each<br>3. Verify response | - Status: 201<br>- Order created<br>- totalAmount: 99,999.90<br>- Large totals handled correctly |
+| **TC-O-035** | Edge | Duplicate productIds in same order | 1. Send POST request to `/api/orders`<br>2. Body with same productId in 2 different items (different quantities)<br>3. Verify response | - Status: 201<br>- Order created<br>- Both items included separately<br>- Totals calculated correctly |
+| **TC-O-036** | Edge | Create order with special characters in product name | 1. Send POST request to `/api/orders`<br>2. Body with item name: "Mouse & Keyboard #1 (Pro)"<br>3. Verify response | - Status: 201<br>- Order created<br>- Special characters preserved in item name<br>- No encoding issues |
+| **TC-O-037** | Edge | Create order with very long product name | 1. Send POST request to `/api/orders`<br>2. Body with item name: 500+ character string<br>3. Verify response | - Status: 201 or 400 (depends on validation)<br>- If created: name stored as-is<br>- If rejected: error about max length |
+| **TC-O-038** | Edge | Create order with unicode characters in name | 1. Send POST request to `/api/orders`<br>2. Body with item name: "Café ☕ Laptop 中文 العربية"<br>3. Verify response | - Status: 201<br>- Order created<br>- Unicode characters preserved correctly<br>- No character encoding issues |
+| **TC-O-039** | Edge | Whitespace in required fields | 1. Send POST request to `/api/orders`<br>2. Body with userId: "   " (spaces only)<br>3. Verify response | - Status: 400 Bad Request<br>- Error indicates invalid userId<br>- Whitespace-only strings rejected |
+| **TC-O-040** | Edge | Concurrent order creation (same user) | 1. Simultaneously send 2 POST requests for same userId with different items<br>2. Verify both orders created<br>3. Check cart state | - Status: 201 for both<br>- Two unique orderIds created<br>- No race condition issues<br>- Cart cleared only once (last order wins) |
+
+---
