@@ -1,0 +1,1 @@
+The challenges in 1.4.4 are test scripts generated under "tests\tests\checkout" folder.
