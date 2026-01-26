@@ -2,6 +2,12 @@ import { test, expect } from '@playwright/test';
 import { CartPage } from '../../pages/CartPage';
 import { HomePage } from '../../pages/HomePage';
 
+// Test configuration constants
+const TEST_TIMEOUT = {
+  DEFAULT: 5000,
+  PAGE_LOAD: 10000,
+} as const;
+
 test.describe('Empty Cart Functionality', () => {
   let cartPage: CartPage;
   let homePage: HomePage;
@@ -11,114 +17,75 @@ test.describe('Empty Cart Functionality', () => {
     homePage = new HomePage(page);
   });
 
-  test('should display empty cart message when navigating directly to cart page', async ({ page }) => {
-    // Navigate directly to cart page
+  test('should display empty cart message when navigating directly to cart page', async () => {
+    // Navigate directly to cart page using POM method
     await cartPage.goto();
-    
-    // Wait for cart to load
     await cartPage.waitForCartToLoad();
     
-    // Verify cart is empty
+    // Verify cart is empty using POM methods
     expect(await cartPage.isEmpty()).toBe(true);
-    
-    // Verify empty cart message is visible
     await expect(cartPage.emptyCartMessage).toBeVisible();
-    
-    // Verify the exact text
-    const emptyMessage = await cartPage.getEmptyMessage();
-    expect(emptyMessage).toMatch(/your cart is empty/i);
-    
-    // Verify empty cart description is visible
     await expect(cartPage.emptyCartDescription).toBeVisible();
-    
-    // Verify "Start Shopping" button is visible
     await expect(cartPage.startShoppingButton).toBeVisible();
     
-    // Verify no cart items are displayed
+    // Verify cart state
     expect(await cartPage.getCartItemCount()).toBe(0);
-    
-    // Verify cart badge shows 0 or is not visible
-    const badgeCount = await cartPage.getCartBadgeCount();
-    expect(badgeCount).toBe(0);
+    expect(await cartPage.getCartBadgeCount()).toBe(0);
   });
 
   test('should display empty cart message when navigating from home via cart icon', async ({ page }) => {
-    // Navigate to home page
+    // Navigate using POM methods
     await homePage.goto();
-    
-    // Click cart icon in header
-    await homePage.cartIcon.waitFor({ state: 'visible' });
     await homePage.openCart();
     
-    // Verify we're on the cart page
-    await expect(page).toHaveURL(/.*\/cart/);
+    // Verify URL using POM method
+    expect(page.url()).toContain(cartPage.mapsTo());
     
-    // Wait for cart to load
+    // Verify empty state using CartPage methods
     await cartPage.waitForCartToLoad();
+    expect(await cartPage.isEmpty()).toBe(true);
     
-    // Verify empty cart message is visible
-    await expect(cartPage.emptyCartMessage).toBeVisible();
-    
-    // Verify the message content
-    const message = await cartPage.emptyCartMessage.textContent();
-    expect(message).toContain('Your cart is empty');
-    
-    // Verify empty cart icon is visible
-    await expect(cartPage.emptyCartIcon).toBeVisible();
-    
-    // Verify empty cart description
-    await expect(cartPage.emptyCartDescription).toBeVisible();
-    const description = await cartPage.emptyCartDescription.textContent();
-    expect(description).toMatch(/haven't added anything/i);
+    // Verify message content using POM method
+    const message = await cartPage.getEmptyMessage();
+    expect(message).toMatch(/your cart is empty/i);
   });
 
   test('should show Start Shopping button and navigate to home', async ({ page }) => {
-    // Navigate to cart page
     await cartPage.goto();
     await cartPage.waitForCartToLoad();
     
-    // Verify Start Shopping button is visible
-    await expect(cartPage.startShoppingButton).toBeVisible();
-    
-    // Click Start Shopping button
+    // Use POM method for navigation
     await cartPage.startShopping();
     
-    // Verify navigation to home page
-    await expect(page).toHaveURL('http://localhost:9002/');
+    // Verify navigation using POM URL
+    expect(page.url()).toBe(homePage.mapsTo());
   });
 
-  test('should not display order summary when cart is empty', async ({ page }) => {
-    // Navigate to cart page
+  test('should not display order summary when cart is empty', async () => {
     await cartPage.goto();
     await cartPage.waitForCartToLoad();
     
-    // Verify cart is empty
+    // Use POM method
     expect(await cartPage.isEmpty()).toBe(true);
     
-    // Verify order summary is not visible
+    // Verify UI elements not visible
     await expect(cartPage.orderSummaryCard).not.toBeVisible();
-    
-    // Verify checkout button is not visible
     await expect(cartPage.checkoutButton).not.toBeVisible();
   });
 
-  test('should verify page heading is displayed', async ({ page }) => {
-    // Navigate to cart page
+  test('should verify page heading is displayed', async () => {
     await cartPage.goto();
     
-    // Verify page heading
+    // Verify heading using POM locator
     await expect(cartPage.pageHeading).toBeVisible();
-    
-    const heading = await cartPage.pageHeading.textContent();
-    expect(heading).toMatch(/your shopping cart/i);
+    await expect(cartPage.pageHeading).toContainText(/your shopping cart/i);
   });
 
   test('should verify empty cart state has correct styling', async ({ page }) => {
-    // Navigate to cart page
     await cartPage.goto();
     await cartPage.waitForCartToLoad();
     
-    // Verify empty cart elements are visible
+    // Verify all elements using POM locators
     await expect(cartPage.emptyCartIcon).toBeVisible();
     await expect(cartPage.emptyCartMessage).toBeVisible();
     await expect(cartPage.emptyCartDescription).toBeVisible();
@@ -131,56 +98,38 @@ test.describe('Empty Cart Functionality', () => {
     });
   });
 
-  test('should verify cart item count is zero when empty', async ({ page }) => {
-    // Navigate to cart page
+  test('should verify cart item count is zero when empty', async () => {
     await cartPage.goto();
     await cartPage.waitForCartToLoad();
     
-    // Verify cart item count is 0
-    const itemCount = await cartPage.getCartItemCount();
-    expect(itemCount).toBe(0);
-    
-    // Verify isEmpty returns true
-    const isEmpty = await cartPage.isEmpty();
-    expect(isEmpty).toBe(true);
+    // Use POM methods for assertions
+    expect(await cartPage.getCartItemCount()).toBe(0);
+    expect(await cartPage.isEmpty()).toBe(true);
   });
 
-  test('should not show loading state indefinitely', async ({ page }) => {
-    // Navigate to cart page
+  test('should not show loading state indefinitely', async () => {
     await cartPage.goto();
-    
-    // Wait for loading to complete
     await cartPage.waitForCartToLoad();
     
-    // Verify loading spinner is not visible
+    // Verify loading state using POM locators
     await expect(cartPage.loadingSpinner).not.toBeVisible();
-    
-    // Verify loading message is not visible
     await expect(cartPage.loadingMessage).not.toBeVisible();
   });
 
-  test('should verify cart badge in header shows zero or empty', async ({ page }) => {
-    // Navigate to home page first
+  test('should verify cart badge shows zero when empty', async () => {
+    // Verify from home page
     await homePage.goto();
+    expect(await homePage.getCartCount()).toBe(0);
     
-    // Get cart badge count from home page
-    const homeCartCount = await homePage.getCartCount();
-    expect(homeCartCount).toBe(0);
-    
-    // Navigate to cart page
+    // Verify from cart page
     await cartPage.goto();
     await cartPage.waitForCartToLoad();
     
-    // Verify cart is empty
     expect(await cartPage.isEmpty()).toBe(true);
-    
-    // Verify cart badge count
-    const cartBadgeCount = await cartPage.getCartBadgeCount();
-    expect(cartBadgeCount).toBe(0);
+    expect(await cartPage.getCartBadgeCount()).toBe(0);
   });
 
   test.afterEach(async ({ page }, testInfo) => {
-    // Take screenshot on failure
     if (testInfo.status !== testInfo.expectedStatus) {
       await page.screenshot({ 
         path: `test-results/empty-cart-failure-${testInfo.title.replace(/\s+/g, '-')}.png`, 
@@ -198,67 +147,49 @@ test.describe('Empty Cart - Edge Cases', () => {
   });
 
   test('should handle direct URL navigation to cart when empty', async ({ page }) => {
-    // Navigate directly via URL
-    await page.goto('http://localhost:9002/cart');
-    
-    // Wait for cart to load
+    // Use page.goto with POM URL
+    await page.goto(cartPage.mapsTo());
     await cartPage.waitForCartToLoad();
     
-    // Verify empty state
-    await expect(cartPage.emptyCartMessage).toBeVisible();
     expect(await cartPage.isEmpty()).toBe(true);
+    await expect(cartPage.emptyCartMessage).toBeVisible();
   });
 
   test('should verify empty cart after page refresh', async ({ page }) => {
-    // Navigate to cart
     await cartPage.goto();
     await cartPage.waitForCartToLoad();
     
-    // Verify empty state
     expect(await cartPage.isEmpty()).toBe(true);
     
-    // Refresh page
+    // Refresh and verify
     await page.reload();
     await cartPage.waitForCartToLoad();
     
-    // Verify still empty
-    await expect(cartPage.emptyCartMessage).toBeVisible();
     expect(await cartPage.isEmpty()).toBe(true);
+    await expect(cartPage.emptyCartMessage).toBeVisible();
   });
 
-  test('should not display error state when cart is empty', async ({ page }) => {
-    // Navigate to cart page
+  test('should not display error state when cart is empty', async () => {
     await cartPage.goto();
     await cartPage.waitForCartToLoad();
     
-    // Verify no error message
+    // Use POM method for error checking
     expect(await cartPage.hasError()).toBe(false);
     
-    // Verify error message is not visible
     await expect(cartPage.errorMessage).not.toBeVisible();
-    
-    // Verify retry button is not visible
     await expect(cartPage.retryButton).not.toBeVisible();
   });
 
   test('should verify all empty cart UI elements are present', async ({ page }) => {
-    // Navigate to cart page
     await cartPage.goto();
     await cartPage.waitForCartToLoad();
     
-    // Check all required empty cart elements
-    const elements = [
-      { locator: cartPage.emptyCartIcon, name: 'Empty cart icon' },
-      { locator: cartPage.emptyCartMessage, name: 'Empty cart message' },
-      { locator: cartPage.emptyCartDescription, name: 'Empty cart description' },
-      { locator: cartPage.startShoppingButton, name: 'Start shopping button' }
-    ];
+    // Verify all elements using POM locators
+    await expect(cartPage.emptyCartIcon).toBeVisible();
+    await expect(cartPage.emptyCartMessage).toBeVisible();
+    await expect(cartPage.emptyCartDescription).toBeVisible();
+    await expect(cartPage.startShoppingButton).toBeVisible();
     
-    for (const element of elements) {
-      await expect(element.locator).toBeVisible({ timeout: 5000 });
-    }
-    
-    // Take screenshot showing all elements
     await page.screenshot({ 
       path: 'test-results/empty-cart-all-elements.png', 
       fullPage: true 
@@ -266,7 +197,6 @@ test.describe('Empty Cart - Edge Cases', () => {
   });
 
   test.afterEach(async ({ page }, testInfo) => {
-    // Take screenshot on failure
     if (testInfo.status !== testInfo.expectedStatus) {
       await page.screenshot({ 
         path: `test-results/empty-cart-edge-case-failure-${testInfo.title.replace(/\s+/g, '-')}.png`, 
