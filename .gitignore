@@ -47,3 +47,6 @@ firestore-debug.log
 microservices/ai-service/node_modules/
 
 package-lock.json
+
+# playwright results
+/test-results/
