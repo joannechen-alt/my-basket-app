@@ -50,3 +50,6 @@ package-lock.json
 
 # playwright results
 /test-results/
+
+# git
+.git/
