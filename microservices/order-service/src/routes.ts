@@ -99,9 +99,6 @@ router.post('/orders/:userId', async (req: Request, res: Response) => {
     if (error instanceof z.ZodError) {
       return res.status(400).json({ error: 'Invalid order data', details: error.errors });
     }
-    if (error instanceof Error) {
-      return res.status(400).json({ error: error.message });
-    }
     console.error('Error creating order:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
