@@ -1,0 +1,1511 @@
+{
+  "test_type": "keyboard_navigation",
+  "timestamp": "2026-02-24T11:40:19.946Z",
+  "url": "https://doodles.google/",
+  "tab_order": {
+    "actual_order": [
+      {
+        "selector": "a.glue-header__link.glue-header__skip-content",
+        "tagName": "A",
+        "text": "Jump to content",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-header__logo-link",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-header__link",
+        "tagName": "A",
+        "text": "Library",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-header__link",
+        "tagName": "A",
+        "text": "Creating a Doodle",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-header__link",
+        "tagName": "A",
+        "text": "About",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-header__link",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "#glue-carousel-1",
+        "tagName": "DIV",
+        "text": "",
+        "id": "glue-carousel-1",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.hero-tag-carousel__main-cta-link.theme-word.main-outline",
+        "tagName": "A",
+        "text": "Places",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "#glue-carousel-2-1",
+        "tagName": "DIV",
+        "text": "Explore interactive Doodles\n\nFun awaits! Unlock interactive worlds built around holidays, events, sports, and heroes from around the world!\n\nPlay now",
+        "id": "glue-carousel-2-1",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-button.glue-button--high-emphasis.glue-button--icon-right.interactive",
+        "tagName": "A",
+        "text": "Play now",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "button.glue-carousel__button.glue-carousel__button--next",
+        "tagName": "BUTTON",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "div.doodle-card.glue-carousel__item",
+        "tagName": "DIV",
+        "text": "Feb 24, 2026\n\nEstonia Independence Day 2026",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.doodle-card-cta",
+        "tagName": "A",
+        "text": "Feb 24, 2026\n\nEstonia Independence Day 2026",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "#monthDropdown",
+        "tagName": "SELECT",
+        "text": "JAN\nFEB\nMAR\nAPR\nMAY\nJUN\nJUL\nAUG\nSEP\nOCT\nNOV\nDEC",
+        "id": "monthDropdown",
+        "tabIndex": 0
+      },
+      {
+        "selector": "#dayDropdown",
+        "tagName": "SELECT",
+        "text": "01\n02\n03\n04\n05\n06\n07\n08\n09\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31",
+        "id": "dayDropdown",
+        "tabIndex": 0
+      },
+      {
+        "selector": "button.quiz-button.interactive",
+        "tagName": "BUTTON",
+        "text": "Next",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "button.cta.cta--1.discover-color_random-button",
+        "tagName": "BUTTON",
+        "text": "Surprise me",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.doodle-cta",
+        "tagName": "A",
+        "text": "February 13, 2026\nValentine's Day 2026",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.doodle-cta",
+        "tagName": "A",
+        "text": "February 7, 2026\nSnowboarding 2026",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.doodle-cta",
+        "tagName": "A",
+        "text": "February 6, 2026\nICC Men's T20 World Cup Begins",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cta.cta--1",
+        "tagName": "A",
+        "text": "See all results",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "object.cards-stack-logo",
+        "tagName": "OBJECT",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "button.cards-stack-content-change",
+        "tagName": "BUTTON",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.cards-stack-content-square-cta",
+        "tagName": "A",
+        "text": "Learn More",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-social__link",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-social__link",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-social__link",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-social__link",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-social__link",
+        "tagName": "A",
+        "text": "",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-footer__link",
+        "tagName": "A",
+        "text": "Library",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-footer__link",
+        "tagName": "A",
+        "text": "Creating a Doodle",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a.glue-footer__link",
+        "tagName": "A",
+        "text": "About",
+        "id": "",
+        "tabIndex": 0
+      },
+      {
+        "selector": "a:nth-child(1)",
+        "tagName": "A",
+        "text": "Privacy Policy",
+        "id": "",
+        "tabIndex": 0
+      }
+    ],
+    "expected_order": [],
+    "issues": [],
+    "visual_evidence": {
+      "screenshot_path": "accessibility-reports\\keyboard-tab-order-2026-02-24T11-40-25-940Z.png",
+      "test_component": "tab_order",
+      "context": "Tab Order Navigation Test",
+      "issue_id": "tab-order-overview",
+      "issue_type": "info",
+      "issue_description": "Tab order sequence documentation",
+      "problematic_element": "document",
+      "failure_reason": "",
+      "severity": "low",
+      "annotations": [
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "🔢 Keyboard Tab Navigation Sequence",
+          "color": "#0066cc",
+          "annotation_purpose": "explanation"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 35
+          },
+          "content": "This shows the order keyboard users navigate through interactive elements",
+          "color": "#666666",
+          "annotation_purpose": "context"
+        }
+      ]
+    }
+  },
+  "focus_indicators": {
+    "tested_elements": [
+      {
+        "selector": "a.glue-header__link.glue-header__skip-content",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgba(0, 0, 0, 0) solid 2px",
+          "outlineWidth": "2px",
+          "outlineStyle": "solid",
+          "outlineColor": "rgba(0, 0, 0, 0)",
+          "boxShadow": "none",
+          "border": "0px none rgb(32, 33, 36)",
+          "backgroundColor": "rgb(248, 249, 250)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 160,
+            "height": 48,
+            "top": 8,
+            "left": 128
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "button.glue-header__drawer-toggle-btn",
+        "tagName": "BUTTON",
+        "has_visible_focus": false,
+        "focus_styles": {
+          "outline": "rgb(95, 99, 104) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(95, 99, 104)",
+          "boxShadow": "none",
+          "border": "0px none rgb(95, 99, 104)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(95, 99, 104)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "left": 0
+          }
+        },
+        "issues": [
+          "No visible focus indicator detected"
+        ]
+      },
+      {
+        "selector": "a.glue-header__logo-link",
+        "tagName": "A",
+        "has_visible_focus": false,
+        "focus_styles": {
+          "outline": "rgb(95, 99, 104) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(95, 99, 104)",
+          "boxShadow": "none",
+          "border": "0px none rgb(95, 99, 104)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(95, 99, 104)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "left": 0
+          }
+        },
+        "issues": [
+          "No visible focus indicator detected"
+        ]
+      },
+      {
+        "selector": "a.glue-header__link.mobile-search-link",
+        "tagName": "A",
+        "has_visible_focus": false,
+        "focus_styles": {
+          "outline": "rgb(95, 99, 104) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(95, 99, 104)",
+          "boxShadow": "none",
+          "border": "0px none rgb(95, 99, 104)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(95, 99, 104)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "left": 0
+          }
+        },
+        "issues": [
+          "No visible focus indicator detected"
+        ]
+      },
+      {
+        "selector": "a.glue-header__logo-link",
+        "tagName": "A",
+        "has_visible_focus": false,
+        "focus_styles": {
+          "outline": "rgb(95, 99, 104) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(95, 99, 104)",
+          "boxShadow": "none",
+          "border": "0px none rgb(95, 99, 104)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(95, 99, 104)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "left": 0
+          }
+        },
+        "issues": [
+          "No visible focus indicator detected"
+        ]
+      },
+      {
+        "selector": "a.glue-header__link",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgba(0, 0, 0, 0) solid 2px",
+          "outlineWidth": "2px",
+          "outlineStyle": "solid",
+          "outlineColor": "rgba(0, 0, 0, 0)",
+          "boxShadow": "none",
+          "border": "0px none rgb(32, 33, 36)",
+          "backgroundColor": "rgb(248, 249, 250)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 160,
+            "height": 48,
+            "top": 8,
+            "left": 128
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.glue-header__link",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgba(0, 0, 0, 0) solid 2px",
+          "outlineWidth": "2px",
+          "outlineStyle": "solid",
+          "outlineColor": "rgba(0, 0, 0, 0)",
+          "boxShadow": "none",
+          "border": "0px none rgb(32, 33, 36)",
+          "backgroundColor": "rgb(248, 249, 250)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 160,
+            "height": 48,
+            "top": 8,
+            "left": 128
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.glue-header__link",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgba(0, 0, 0, 0) solid 2px",
+          "outlineWidth": "2px",
+          "outlineStyle": "solid",
+          "outlineColor": "rgba(0, 0, 0, 0)",
+          "boxShadow": "none",
+          "border": "0px none rgb(32, 33, 36)",
+          "backgroundColor": "rgb(248, 249, 250)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 160,
+            "height": 48,
+            "top": 8,
+            "left": 128
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.glue-header__link",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgba(0, 0, 0, 0) solid 2px",
+          "outlineWidth": "2px",
+          "outlineStyle": "solid",
+          "outlineColor": "rgba(0, 0, 0, 0)",
+          "boxShadow": "none",
+          "border": "0px none rgb(32, 33, 36)",
+          "backgroundColor": "rgb(248, 249, 250)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "flex",
+          "opacity": "1",
+          "rect": {
+            "width": 160,
+            "height": 48,
+            "top": 8,
+            "left": 128
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "#glue-carousel-1",
+        "tagName": "DIV",
+        "has_visible_focus": false,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "none",
+          "border": "0px none rgb(32, 33, 36)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 1264.666748046875,
+            "height": 640,
+            "top": 64,
+            "left": 0
+          }
+        },
+        "issues": [
+          "No visible focus indicator detected"
+        ]
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__collage-card",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "0.666667px solid rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "block",
+          "opacity": "1",
+          "rect": {
+            "width": 274.4270935058594,
+            "height": 110.5625,
+            "top": 227,
+            "left": -145.42709350585938
+          }
+        },
+        "issues": []
+      },
+      {
+        "selector": "a.hero-tag-carousel__main-cta-link.theme-word.main-outline",
+        "tagName": "A",
+        "has_visible_focus": true,
+        "focus_styles": {
+          "outline": "rgb(32, 33, 36) none 0px",
+          "outlineWidth": "0px",
+          "outlineStyle": "none",
+          "outlineColor": "rgb(32, 33, 36)",
+          "boxShadow": "rgb(25, 103, 210) 0px 0px 0px 2px",
+          "border": "2px solid rgb(41, 181, 113)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(32, 33, 36)",
+          "visibility": "visible",
+          "display": "inline-flex",
+          "opacity": "1",
+          "rect": {
+            "width": 224.21875,
+            "height": 78.06095886230469,
+            "top": 594.0059814453125,
+            "left": 520.2239990234375
+          }
+        },
+        "issues": []
+      }
+    ],
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Element may not have sufficient focus indicator: No visible focus indicator detected",
+        "element": "button.glue-header__drawer-toggle-btn"
+      },
+      {
+        "type": "warning",
+        "message": "Element may not have sufficient focus indicator: No visible focus indicator detected",
+        "element": "a.glue-header__logo-link"
+      },
+      {
+        "type": "warning",
+        "message": "Element may not have sufficient focus indicator: No visible focus indicator detected",
+        "element": "a.glue-header__link.mobile-search-link"
+      },
+      {
+        "type": "warning",
+        "message": "Element may not have sufficient focus indicator: No visible focus indicator detected",
+        "element": "a.glue-header__logo-link"
+      },
+      {
+        "type": "warning",
+        "message": "Element may not have sufficient focus indicator: No visible focus indicator detected",
+        "element": "#glue-carousel-1"
+      }
+    ],
+    "visual_evidence": [
+      {
+        "screenshot_path": "accessibility-reports\\focus-good-0-2026-02-24T11-40-31-103Z.png",
+        "test_component": "focus_indicators",
+        "context": "Focus Indicator Test: A element",
+        "issue_id": "focus-indicator-0",
+        "issue_type": "info",
+        "issue_description": "Focus indicator visible on A element",
+        "problematic_element": "a.glue-header__link.glue-header__skip-content",
+        "failure_reason": "",
+        "severity": "low",
+        "annotations": [
+          {
+            "type": "highlight",
+            "position": {
+              "x": 123,
+              "y": 3,
+              "width": 170,
+              "height": 58
+            },
+            "content": "Focus indicator present",
+            "color": "#28a745",
+            "element_selector": "a.glue-header__link.glue-header__skip-content",
+            "annotation_purpose": "problem-highlight"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 10
+            },
+            "content": "🎯 PASS: Focus Indicator",
+            "color": "#28a745",
+            "annotation_purpose": "explanation"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 35
+            },
+            "content": "Focus is clearly visible to keyboard users",
+            "color": "#666666",
+            "annotation_purpose": "explanation"
+          }
+        ]
+      },
+      {
+        "screenshot_path": "accessibility-reports\\focus-good-1-2026-02-24T11-40-31-486Z.png",
+        "test_component": "focus_indicators",
+        "context": "Focus Indicator Test: BUTTON element",
+        "issue_id": "focus-indicator-1",
+        "issue_type": "info",
+        "issue_description": "Focus indicator visible on BUTTON element",
+        "problematic_element": "button.glue-header__drawer-toggle-btn",
+        "failure_reason": "",
+        "severity": "low",
+        "annotations": [
+          {
+            "type": "highlight",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "width": 10,
+              "height": 10
+            },
+            "content": "Focus indicator present",
+            "color": "#28a745",
+            "element_selector": "button.glue-header__drawer-toggle-btn",
+            "annotation_purpose": "problem-highlight"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 10
+            },
+            "content": "🎯 PASS: Focus Indicator",
+            "color": "#28a745",
+            "annotation_purpose": "explanation"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 35
+            },
+            "content": "Focus is clearly visible to keyboard users",
+            "color": "#666666",
+            "annotation_purpose": "explanation"
+          }
+        ]
+      },
+      {
+        "screenshot_path": "accessibility-reports\\focus-good-2-2026-02-24T11-40-31-869Z.png",
+        "test_component": "focus_indicators",
+        "context": "Focus Indicator Test: A element",
+        "issue_id": "focus-indicator-2",
+        "issue_type": "info",
+        "issue_description": "Focus indicator visible on A element",
+        "problematic_element": "a.glue-header__logo-link",
+        "failure_reason": "",
+        "severity": "low",
+        "annotations": [
+          {
+            "type": "highlight",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "width": 10,
+              "height": 10
+            },
+            "content": "Focus indicator present",
+            "color": "#28a745",
+            "element_selector": "a.glue-header__logo-link",
+            "annotation_purpose": "problem-highlight"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 10
+            },
+            "content": "🎯 PASS: Focus Indicator",
+            "color": "#28a745",
+            "annotation_purpose": "explanation"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 35
+            },
+            "content": "Focus is clearly visible to keyboard users",
+            "color": "#666666",
+            "annotation_purpose": "explanation"
+          }
+        ]
+      },
+      {
+        "screenshot_path": "accessibility-reports\\focus-good-3-2026-02-24T11-40-32-273Z.png",
+        "test_component": "focus_indicators",
+        "context": "Focus Indicator Test: A element",
+        "issue_id": "focus-indicator-3",
+        "issue_type": "info",
+        "issue_description": "Focus indicator visible on A element",
+        "problematic_element": "a.glue-header__link.mobile-search-link",
+        "failure_reason": "",
+        "severity": "low",
+        "annotations": [
+          {
+            "type": "highlight",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "width": 10,
+              "height": 10
+            },
+            "content": "Focus indicator present",
+            "color": "#28a745",
+            "element_selector": "a.glue-header__link.mobile-search-link",
+            "annotation_purpose": "problem-highlight"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 10
+            },
+            "content": "🎯 PASS: Focus Indicator",
+            "color": "#28a745",
+            "annotation_purpose": "explanation"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 35
+            },
+            "content": "Focus is clearly visible to keyboard users",
+            "color": "#666666",
+            "annotation_purpose": "explanation"
+          }
+        ]
+      },
+      {
+        "screenshot_path": "accessibility-reports\\focus-good-4-2026-02-24T11-40-32-703Z.png",
+        "test_component": "focus_indicators",
+        "context": "Focus Indicator Test: A element",
+        "issue_id": "focus-indicator-4",
+        "issue_type": "info",
+        "issue_description": "Focus indicator visible on A element",
+        "problematic_element": "a.glue-header__logo-link",
+        "failure_reason": "",
+        "severity": "low",
+        "annotations": [
+          {
+            "type": "highlight",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "width": 10,
+              "height": 10
+            },
+            "content": "Focus indicator present",
+            "color": "#28a745",
+            "element_selector": "a.glue-header__logo-link",
+            "annotation_purpose": "problem-highlight"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 10
+            },
+            "content": "🎯 PASS: Focus Indicator",
+            "color": "#28a745",
+            "annotation_purpose": "explanation"
+          },
+          {
+            "type": "text",
+            "position": {
+              "x": 10,
+              "y": 35
+            },
+            "content": "Focus is clearly visible to keyboard users",
+            "color": "#666666",
+            "annotation_purpose": "explanation"
+          }
+        ]
+      }
+    ]
+  },
+  "keyboard_traps": {
+    "traps_found": [],
+    "escape_methods": [],
+    "issues": []
+  },
+  "skip_links": {
+    "skip_links_found": [
+      {
+        "selector": "a.glue-header__link.glue-header__skip-content",
+        "text": "Jump to content",
+        "href": "https://doodles.google/#content",
+        "target": "content",
+        "target_exists": true,
+        "functions_correctly": false,
+        "final_focus": "body:nth-child(1)"
+      }
+    ],
+    "issues": [
+      {
+        "type": "error",
+        "message": "Skip link \"Jump to content\" does not function correctly",
+        "element": "a.glue-header__link.glue-header__skip-content"
+      }
+    ],
+    "visual_evidence": {
+      "screenshot_path": "accessibility-reports\\skip-links-2026-02-24T11-40-33-305Z.png",
+      "annotations": [
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "⏭️ Skip Link Navigation Test",
+          "color": "#009900"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 50
+          },
+          "content": "Tests if keyboard users can quickly skip repetitive content",
+          "color": "#666666"
+        }
+      ]
+    }
+  },
+  "visual_evidence": [
+    {
+      "screenshot_path": "accessibility-reports\\keyboard-tab-order-2026-02-24T11-40-25-940Z.png",
+      "test_component": "tab_order",
+      "context": "Tab Order Testing",
+      "issue_id": "tab-order-overview",
+      "issue_type": "info",
+      "issue_description": "Tab order sequence documentation",
+      "problematic_element": "document",
+      "failure_reason": "",
+      "severity": "low",
+      "annotations": [
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "🔢 Keyboard Tab Navigation Sequence",
+          "color": "#0066cc",
+          "annotation_purpose": "explanation"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 35
+          },
+          "content": "This shows the order keyboard users navigate through interactive elements",
+          "color": "#666666",
+          "annotation_purpose": "context"
+        }
+      ]
+    },
+    {
+      "screenshot_path": "accessibility-reports\\focus-good-0-2026-02-24T11-40-31-103Z.png",
+      "test_component": "focus_indicators",
+      "context": "Focus Indicator 1",
+      "issue_id": "focus-indicator-0",
+      "issue_type": "info",
+      "issue_description": "Focus indicator visible on A element",
+      "problematic_element": "a.glue-header__link.glue-header__skip-content",
+      "failure_reason": "",
+      "severity": "low",
+      "annotations": [
+        {
+          "type": "highlight",
+          "position": {
+            "x": 123,
+            "y": 3,
+            "width": 170,
+            "height": 58
+          },
+          "content": "Focus indicator present",
+          "color": "#28a745",
+          "element_selector": "a.glue-header__link.glue-header__skip-content",
+          "annotation_purpose": "problem-highlight"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "🎯 PASS: Focus Indicator",
+          "color": "#28a745",
+          "annotation_purpose": "explanation"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 35
+          },
+          "content": "Focus is clearly visible to keyboard users",
+          "color": "#666666",
+          "annotation_purpose": "explanation"
+        }
+      ]
+    },
+    {
+      "screenshot_path": "accessibility-reports\\focus-good-1-2026-02-24T11-40-31-486Z.png",
+      "test_component": "focus_indicators",
+      "context": "Focus Indicator 2",
+      "issue_id": "focus-indicator-1",
+      "issue_type": "info",
+      "issue_description": "Focus indicator visible on BUTTON element",
+      "problematic_element": "button.glue-header__drawer-toggle-btn",
+      "failure_reason": "",
+      "severity": "low",
+      "annotations": [
+        {
+          "type": "highlight",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 10,
+            "height": 10
+          },
+          "content": "Focus indicator present",
+          "color": "#28a745",
+          "element_selector": "button.glue-header__drawer-toggle-btn",
+          "annotation_purpose": "problem-highlight"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "🎯 PASS: Focus Indicator",
+          "color": "#28a745",
+          "annotation_purpose": "explanation"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 35
+          },
+          "content": "Focus is clearly visible to keyboard users",
+          "color": "#666666",
+          "annotation_purpose": "explanation"
+        }
+      ]
+    },
+    {
+      "screenshot_path": "accessibility-reports\\focus-good-2-2026-02-24T11-40-31-869Z.png",
+      "test_component": "focus_indicators",
+      "context": "Focus Indicator 3",
+      "issue_id": "focus-indicator-2",
+      "issue_type": "info",
+      "issue_description": "Focus indicator visible on A element",
+      "problematic_element": "a.glue-header__logo-link",
+      "failure_reason": "",
+      "severity": "low",
+      "annotations": [
+        {
+          "type": "highlight",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 10,
+            "height": 10
+          },
+          "content": "Focus indicator present",
+          "color": "#28a745",
+          "element_selector": "a.glue-header__logo-link",
+          "annotation_purpose": "problem-highlight"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "🎯 PASS: Focus Indicator",
+          "color": "#28a745",
+          "annotation_purpose": "explanation"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 35
+          },
+          "content": "Focus is clearly visible to keyboard users",
+          "color": "#666666",
+          "annotation_purpose": "explanation"
+        }
+      ]
+    },
+    {
+      "screenshot_path": "accessibility-reports\\focus-good-3-2026-02-24T11-40-32-273Z.png",
+      "test_component": "focus_indicators",
+      "context": "Focus Indicator 4",
+      "issue_id": "focus-indicator-3",
+      "issue_type": "info",
+      "issue_description": "Focus indicator visible on A element",
+      "problematic_element": "a.glue-header__link.mobile-search-link",
+      "failure_reason": "",
+      "severity": "low",
+      "annotations": [
+        {
+          "type": "highlight",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 10,
+            "height": 10
+          },
+          "content": "Focus indicator present",
+          "color": "#28a745",
+          "element_selector": "a.glue-header__link.mobile-search-link",
+          "annotation_purpose": "problem-highlight"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "🎯 PASS: Focus Indicator",
+          "color": "#28a745",
+          "annotation_purpose": "explanation"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 35
+          },
+          "content": "Focus is clearly visible to keyboard users",
+          "color": "#666666",
+          "annotation_purpose": "explanation"
+        }
+      ]
+    },
+    {
+      "screenshot_path": "accessibility-reports\\focus-good-4-2026-02-24T11-40-32-703Z.png",
+      "test_component": "focus_indicators",
+      "context": "Focus Indicator 5",
+      "issue_id": "focus-indicator-4",
+      "issue_type": "info",
+      "issue_description": "Focus indicator visible on A element",
+      "problematic_element": "a.glue-header__logo-link",
+      "failure_reason": "",
+      "severity": "low",
+      "annotations": [
+        {
+          "type": "highlight",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 10,
+            "height": 10
+          },
+          "content": "Focus indicator present",
+          "color": "#28a745",
+          "element_selector": "a.glue-header__logo-link",
+          "annotation_purpose": "problem-highlight"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "🎯 PASS: Focus Indicator",
+          "color": "#28a745",
+          "annotation_purpose": "explanation"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 35
+          },
+          "content": "Focus is clearly visible to keyboard users",
+          "color": "#666666",
+          "annotation_purpose": "explanation"
+        }
+      ]
+    },
+    {
+      "screenshot_path": "accessibility-reports\\skip-links-2026-02-24T11-40-33-305Z.png",
+      "annotations": [
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 10
+          },
+          "content": "⏭️ Skip Link Navigation Test",
+          "color": "#009900"
+        },
+        {
+          "type": "text",
+          "position": {
+            "x": 10,
+            "y": 50
+          },
+          "content": "Tests if keyboard users can quickly skip repetitive content",
+          "color": "#666666"
+        }
+      ],
+      "test_component": "skip_links",
+      "context": "Skip Links Testing"
+    }
+  ],
+  "summary": {
+    "total_issues": 6,
+    "critical_issues": 1,
+    "warnings": 5,
+    "passed_tests": 17
+  }
+}
