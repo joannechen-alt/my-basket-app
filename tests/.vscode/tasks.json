@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Product Service GET /products Tests",
+			"type": "shell",
+			"command": "npx playwright test tests/product-service/1-get-apiproducts.spec.ts --reporter=html --project=chromium",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run GET Products API Tests",
+			"type": "shell",
+			"command": "npx playwright test tests/product-service/1-get-apiproducts.spec.ts --reporter=html --project=chromium",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

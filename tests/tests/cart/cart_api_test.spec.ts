@@ -1,12 +1,14 @@
 import { test, expect } from '@playwright/test';
+import { randomUUID } from 'crypto';
 
 const CART_SERVICE_URL = 'http://localhost:3002';
-const TEST_USER_ID = 'test-user';
 
 test.describe('Cart Addition API Tests', () => {
+  let testUserId: string;
+
   test.beforeEach(async ({ request }) => {
-    // Clear the cart before each test to ensure clean state
-    await request.delete(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}`);
+    // Generate unique user ID for each test to ensure isolation
+    testUserId = `test-user-${randomUUID()}`;
   });
 
   test.describe('Positive Test Cases', () => {
@@ -18,7 +20,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: requestBody,
         headers: {
           'Content-Type': 'application/json'
@@ -32,7 +34,7 @@ test.describe('Cart Addition API Tests', () => {
       
       // Verify cart structure
       expect(responseBody).toHaveProperty('id');
-      expect(responseBody).toHaveProperty('userId', TEST_USER_ID);
+      expect(responseBody).toHaveProperty('userId', testUserId);
       expect(responseBody).toHaveProperty('items');
       expect(responseBody).toHaveProperty('totalAmount');
       expect(responseBody).toHaveProperty('totalItems');
@@ -67,7 +69,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: requestBody,
         headers: {
           'Content-Type': 'application/json'
@@ -89,7 +91,7 @@ test.describe('Cart Addition API Tests', () => {
         quantity: 3
       };
       
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: firstRequest
       });
 
@@ -99,7 +101,7 @@ test.describe('Cart Addition API Tests', () => {
         quantity: 2
       };
       
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: secondRequest,
         headers: {
           'Content-Type': 'application/json'
@@ -125,12 +127,12 @@ test.describe('Cart Addition API Tests', () => {
 
     test('should add multiple different items to cart', async ({ request }) => {
       // Arrange & Act - Add first item
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '1', quantity: 2 }
       });
 
       // Add second item
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '2', quantity: 1 },
         headers: {
           'Content-Type': 'application/json'
@@ -162,7 +164,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: requestBody,
         headers: {
           'Content-Type': 'application/json'
@@ -190,7 +192,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: invalidRequest,
         headers: {
           'Content-Type': 'application/json'
@@ -213,7 +215,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: invalidRequest,
         headers: {
           'Content-Type': 'application/json'
@@ -235,7 +237,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: invalidRequest,
         headers: {
           'Content-Type': 'application/json'
@@ -258,7 +260,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: invalidRequest,
         headers: {
           'Content-Type': 'application/json'
@@ -280,7 +282,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: invalidRequest,
         headers: {
           'Content-Type': 'application/json'
@@ -295,14 +297,14 @@ test.describe('Cart Addition API Tests', () => {
       expect(responseBody.error).toBe('Product not found');
     });
 
-    test('should return 400 for invalid userId', async ({ request }) => {
+    test('should return 404 for empty userId in URL path', async ({ request }) => {
       // Arrange
       const requestBody = {
         productId: '1',
         quantity: 1
       };
 
-      // Act
+      // Act - Empty userId creates malformed URL that doesn't match route
       const response = await request.post(`${CART_SERVICE_URL}/api/cart//items`, {
         data: requestBody,
         headers: {
@@ -310,12 +312,11 @@ test.describe('Cart Addition API Tests', () => {
         }
       });
 
-      // Assert
-      expect(response.status()).toBe(400);
+      // Assert - Express returns 404 for non-matching routes
+      expect(response.status()).toBe(404);
       
       const responseBody = await response.json();
       expect(responseBody).toHaveProperty('error');
-      expect(responseBody.error).toContain('Invalid user ID');
     });
   });
 
@@ -328,7 +329,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: requestBody,
         headers: {
           'Content-Type': 'application/json'
@@ -355,7 +356,7 @@ test.describe('Cart Addition API Tests', () => {
       };
 
       // Act
-      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      const response = await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: requestBody,
         headers: {
           'Content-Type': 'application/json'
@@ -376,24 +377,24 @@ test.describe('Cart Addition API Tests', () => {
     });
 
     test('should handle adding many items to cart', async ({ request }) => {
-      // Arrange & Act - Add 10 different products
-      const productIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+      // Arrange & Act - Add 8 different products (only products 1-8 exist in sample data)
+      const productIds = ['1', '2', '3', '4', '5', '6', '7', '8'];
       
       for (const productId of productIds) {
-        await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+        await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
           data: { productId, quantity: 1 }
         });
       }
 
       // Get final cart state
-      const response = await request.get(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}`);
+      const response = await request.get(`${CART_SERVICE_URL}/api/cart/${testUserId}`);
 
       // Assert
       expect(response.status()).toBe(200);
       
       const responseBody = await response.json();
-      expect(responseBody.items.length).toBeGreaterThan(0);
-      expect(responseBody.totalItems).toBeGreaterThan(0);
+      expect(responseBody.items).toHaveLength(8);
+      expect(responseBody.totalItems).toBe(8);
       expect(responseBody.totalAmount).toBeGreaterThan(0);
     });
   });
@@ -401,16 +402,16 @@ test.describe('Cart Addition API Tests', () => {
   test.describe('Data Integrity Tests', () => {
     test('should verify totalAmount equals sum of all items', async ({ request }) => {
       // Arrange - Add multiple items
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '1', quantity: 2 }
       });
       
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '2', quantity: 3 }
       });
 
       // Act
-      const response = await request.get(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}`);
+      const response = await request.get(`${CART_SERVICE_URL}/api/cart/${testUserId}`);
 
       // Assert
       expect(response.status()).toBe(200);
@@ -428,20 +429,20 @@ test.describe('Cart Addition API Tests', () => {
 
     test('should verify totalItems equals sum of all quantities', async ({ request }) => {
       // Arrange - Add multiple items with different quantities
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '1', quantity: 2 }
       });
       
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '2', quantity: 5 }
       });
       
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '3', quantity: 1 }
       });
 
       // Act
-      const response = await request.get(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}`);
+      const response = await request.get(`${CART_SERVICE_URL}/api/cart/${testUserId}`);
 
       // Assert
       expect(response.status()).toBe(200);
@@ -461,22 +462,22 @@ test.describe('Cart Addition API Tests', () => {
     test('should maintain data consistency after multiple operations', async ({ request }) => {
       // Arrange - Perform multiple operations
       // 1. Add item
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '1', quantity: 3 }
       });
       
       // 2. Add same item again (should increment)
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '1', quantity: 2 }
       });
       
       // 3. Add different item
-      await request.post(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}/items`, {
+      await request.post(`${CART_SERVICE_URL}/api/cart/${testUserId}/items`, {
         data: { productId: '2', quantity: 4 }
       });
 
       // Act - Get final cart state
-      const response = await request.get(`${CART_SERVICE_URL}/api/cart/${TEST_USER_ID}`);
+      const response = await request.get(`${CART_SERVICE_URL}/api/cart/${testUserId}`);
 
       // Assert
       expect(response.status()).toBe(200);

@@ -53,3 +53,9 @@ package-lock.json
 
 # git
 .git/
+
+# accessibility reports
+/accessibility-reports/
+
+# api test reports
+/api-test-reports/

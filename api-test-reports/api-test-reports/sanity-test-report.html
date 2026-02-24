@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Service API - Sanity Test Report</title>
+    <title>API Test Session Report</title>
     <style>
         * {
             margin: 0;
@@ -415,7 +415,7 @@
 <body class="theme-light">
     <div class="container">
         <header class="header">
-            <h1>Cart Service API - Sanity Test Report</h1>
+            <h1>API Test Session Report</h1>
             <div class="session-info">
                 <span class="session-id">Session: sanity-test</span>
                 <span class="status status-running">running</span>
@@ -426,19 +426,19 @@
             <h2>Summary</h2>
             <div class="summary-grid">
                 <div class="summary-card">
-                    <div class="summary-value">5</div>
+                    <div class="summary-value">3</div>
                     <div class="summary-label">Total Requests</div>
                 </div>
                 <div class="summary-card success">
-                    <div class="summary-value">4</div>
+                    <div class="summary-value">3</div>
                     <div class="summary-label">Successful</div>
                 </div>
                 <div class="summary-card failure">
-                    <div class="summary-value">1</div>
+                    <div class="summary-value">0</div>
                     <div class="summary-label">Failed</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-value">80%</div>
+                    <div class="summary-value">100%</div>
                     <div class="summary-label">Success Rate</div>
                 </div>
                 <div class="summary-card">
@@ -446,7 +446,7 @@
                     <div class="summary-label">Duration</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-value">80%</div>
+                    <div class="summary-value">100%</div>
                     <div class="summary-label">Validation Rate</div>
                 </div>
             </div>
@@ -457,15 +457,15 @@
             <h2>Timing Analysis</h2>
             <div class="summary-grid">
                 <div class="summary-card">
-                    <div class="summary-value">26868ms</div>
+                    <div class="summary-value">26881ms</div>
                     <div class="summary-label">Total Duration</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-value">5</div>
+                    <div class="summary-value">3</div>
                     <div class="summary-label">Requests</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-value">6717ms</div>
+                    <div class="summary-value">13441ms</div>
                     <div class="summary-label">Avg Interval</div>
                 </div>
             </div>
@@ -473,32 +473,20 @@
                 <h3>Request Timeline</h3>
                 
                     <div style="margin: 5px 0; padding: 5px; background: rgba(0,123,255,0.1); border-radius: 3px;">
-                        <strong>GET http://localhost:3002/api/health</strong> 
-                        - 5ms 
-                        <span class="status-code status-2xx">200</span>
-                    </div>
-                
-                    <div style="margin: 5px 0; padding: 5px; background: rgba(0,123,255,0.1); border-radius: 3px;">
-                        <strong>GET http://localhost:3002/api/cart/user_123</strong> 
-                        - 3511ms 
-                        <span class="status-code status-2xx">200</span>
-                    </div>
-                
-                    <div style="margin: 5px 0; padding: 5px; background: rgba(0,123,255,0.1); border-radius: 3px;">
-                        <strong>POST http://localhost:3002/api/cart/user_123/items</strong> 
-                        - 15509ms 
-                        <span class="status-code status-4xx">404</span>
-                    </div>
-                
-                    <div style="margin: 5px 0; padding: 5px; background: rgba(0,123,255,0.1); border-radius: 3px;">
                         <strong>GET http://localhost:3001/api/products</strong> 
-                        - 19781ms 
+                        - 3ms 
                         <span class="status-code status-2xx">200</span>
                     </div>
                 
                     <div style="margin: 5px 0; padding: 5px; background: rgba(0,123,255,0.1); border-radius: 3px;">
-                        <strong>POST http://localhost:3002/api/cart/user_123/items</strong> 
-                        - 26873ms 
+                        <strong>GET http://localhost:3001/api/products/1</strong> 
+                        - 16213ms 
+                        <span class="status-code status-2xx">200</span>
+                    </div>
+                
+                    <div style="margin: 5px 0; padding: 5px; background: rgba(0,123,255,0.1); border-radius: 3px;">
+                        <strong>GET http://localhost:3001/api/health</strong> 
+                        - 26884ms 
                         <span class="status-code status-2xx">200</span>
                     </div>
                 
@@ -515,270 +503,13 @@
                 <div class="log-title">
                     <span class="arrow">▶</span>
                     <span class="method method-get">GET</span>
-                    <span>http://localhost:3002/api/health</span>
-                    <span class="status-code status-2xx">200 OK</span>
-                    <span class="validation-badge passed">
-                            ✓ Validation
-                        </span>
-                </div>
-                <div class="log-time">25/02/2026, 1:11:14 am</div>
-            </div>
-            <div class="log-body">
-                
-        <div class="request-response-grid">
-            <div class="request-section">
-                <div class="section-title">Request</div>
-                
-                    <p><strong>Method:</strong> GET</p>
-                    <p><strong>URL:</strong> http://localhost:3002/api/health</p>
-                    
-                    
-                
-            </div>
-            <div class="response-section">
-                <div class="section-title">Response</div>
-                
-                    <p><strong>Status:</strong> 200 - OK</p>
-                    <p><strong>Content Type:</strong> application/json; charset=utf-8</p>
-                    
-                    
-                        <p><strong>Body:</strong></p>
-                        <div class="code-block">{
-  &quot;status&quot;: &quot;healthy&quot;,
-  &quot;service&quot;: &quot;cart-service&quot;,
-  &quot;timestamp&quot;: &quot;2026-02-24T12:11:14.620Z&quot;
-}</div>
-                    
-                
-            </div>
-        </div>
-        
-                
-        <div class="validation-results validation-passed">
-            <h4>Validation Results</h4>
-            
-            <!-- Status Code Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Status Code:</strong> ✓ Passed</p>
-                
-                    <div class="validation-comparison">
-                        <div class="expected-section">
-                            <div class="comparison-title">Expected:</div>
-                            <div class="comparison-value">200</div>
-                        </div>
-                        <div class="actual-section">
-                            <div class="comparison-title">Actual:</div>
-                            <div class="comparison-value">200</div>
-                        </div>
-                    </div>
-                
-            </div>
-
-            <!-- Content Type Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Content Type:</strong> ✓ Passed</p>
-                
-            </div>
-
-            <!-- Body Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Body Validation:</strong> ✓ Passed</p>
-                <p><strong>Reason:</strong> No body expectation set.</p>
-                
-                
-            </div>
-        </div>
-        
-                
-            </div>
-        </div>
-        
-        <div class="log-entry">
-            <div class="log-header">
-                <div class="log-title">
-                    <span class="arrow">▶</span>
-                    <span class="method method-get">GET</span>
-                    <span>http://localhost:3002/api/cart/user_123</span>
-                    <span class="status-code status-2xx">200 OK</span>
-                    <span class="validation-badge passed">
-                            ✓ Validation
-                        </span>
-                </div>
-                <div class="log-time">25/02/2026, 1:11:18 am</div>
-            </div>
-            <div class="log-body">
-                
-        <div class="request-response-grid">
-            <div class="request-section">
-                <div class="section-title">Request</div>
-                
-                    <p><strong>Method:</strong> GET</p>
-                    <p><strong>URL:</strong> http://localhost:3002/api/cart/user_123</p>
-                    
-                    
-                
-            </div>
-            <div class="response-section">
-                <div class="section-title">Response</div>
-                
-                    <p><strong>Status:</strong> 200 - OK</p>
-                    <p><strong>Content Type:</strong> application/json; charset=utf-8</p>
-                    
-                    
-                        <p><strong>Body:</strong></p>
-                        <div class="code-block">{
-  &quot;id&quot;: &quot;d3270588-12ea-414f-a7a4-0f255803bc6c&quot;,
-  &quot;userId&quot;: &quot;user_123&quot;,
-  &quot;items&quot;: [],
-  &quot;totalAmount&quot;: 0,
-  &quot;totalItems&quot;: 0,
-  &quot;createdAt&quot;: &quot;2026-02-24T12:11:18.126Z&quot;,
-  &quot;updatedAt&quot;: &quot;2026-02-24T12:11:18.126Z&quot;
-}</div>
-                    
-                
-            </div>
-        </div>
-        
-                
-        <div class="validation-results validation-passed">
-            <h4>Validation Results</h4>
-            
-            <!-- Status Code Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Status Code:</strong> ✓ Passed</p>
-                
-                    <div class="validation-comparison">
-                        <div class="expected-section">
-                            <div class="comparison-title">Expected:</div>
-                            <div class="comparison-value">200</div>
-                        </div>
-                        <div class="actual-section">
-                            <div class="comparison-title">Actual:</div>
-                            <div class="comparison-value">200</div>
-                        </div>
-                    </div>
-                
-            </div>
-
-            <!-- Content Type Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Content Type:</strong> ✓ Passed</p>
-                
-            </div>
-
-            <!-- Body Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Body Validation:</strong> ✓ Passed</p>
-                <p><strong>Reason:</strong> No body expectation set.</p>
-                
-                
-            </div>
-        </div>
-        
-                
-            </div>
-        </div>
-        
-        <div class="log-entry">
-            <div class="log-header">
-                <div class="log-title">
-                    <span class="arrow">▶</span>
-                    <span class="method method-post">POST</span>
-                    <span>http://localhost:3002/api/cart/user_123/items</span>
-                    <span class="status-code status-4xx">404 Not Found</span>
-                    <span class="validation-badge failed">
-                            ✗ Validation
-                        </span>
-                </div>
-                <div class="log-time">25/02/2026, 1:11:30 am</div>
-            </div>
-            <div class="log-body">
-                
-        <div class="request-response-grid">
-            <div class="request-section">
-                <div class="section-title">Request</div>
-                
-                    <p><strong>Method:</strong> POST</p>
-                    <p><strong>URL:</strong> http://localhost:3002/api/cart/user_123/items</p>
-                    
-                    
-                        <p><strong>Body:</strong></p>
-                        <div class="code-block">{
-  &quot;productId&quot;: &quot;prod_123&quot;,
-  &quot;quantity&quot;: 1
-}</div>
-                    
-                
-            </div>
-            <div class="response-section">
-                <div class="section-title">Response</div>
-                
-                    <p><strong>Status:</strong> 404 - Not Found</p>
-                    <p><strong>Content Type:</strong> application/json; charset=utf-8</p>
-                    
-                    
-                        <p><strong>Body:</strong></p>
-                        <div class="code-block">{
-  &quot;error&quot;: &quot;Product not found&quot;
-}</div>
-                    
-                
-            </div>
-        </div>
-        
-                
-        <div class="validation-results validation-failed">
-            <h4>Validation Results</h4>
-            
-            <!-- Status Code Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Status Code:</strong> ✗ Failed</p>
-                
-                    <div class="validation-comparison">
-                        <div class="expected-section">
-                            <div class="comparison-title">Expected:</div>
-                            <div class="comparison-value">200</div>
-                        </div>
-                        <div class="actual-section">
-                            <div class="comparison-title">Actual:</div>
-                            <div class="comparison-value">404</div>
-                        </div>
-                    </div>
-                
-            </div>
-
-            <!-- Content Type Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Content Type:</strong> ✓ Passed</p>
-                
-            </div>
-
-            <!-- Body Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Body Validation:</strong> ✓ Passed</p>
-                <p><strong>Reason:</strong> No body expectation set.</p>
-                
-                
-            </div>
-        </div>
-        
-                
-            </div>
-        </div>
-        
-        <div class="log-entry">
-            <div class="log-header">
-                <div class="log-title">
-                    <span class="arrow">▶</span>
-                    <span class="method method-get">GET</span>
                     <span>http://localhost:3001/api/products</span>
                     <span class="status-code status-2xx">200 OK</span>
                     <span class="validation-badge passed">
                             ✓ Validation
                         </span>
                 </div>
-                <div class="log-time">25/02/2026, 1:11:34 am</div>
+                <div class="log-time">25/02/2026, 11:21:54 am</div>
             </div>
             <div class="log-body">
                 
@@ -811,8 +542,8 @@
       &quot;dataAiHint&quot;: &quot;apples fruit&quot;,
       &quot;category&quot;: &quot;fruits&quot;,
       &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;
+      &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+      &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
     },
     {
       &quot;id&quot;: &quot;2&quot;,
@@ -823,8 +554,8 @@
       &quot;dataAiHint&quot;: &quot;bread bakery&quot;,
       &quot;category&quot;: &quot;bakery&quot;,
       &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;
+      &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+      &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
     },
     {
       &quot;id&quot;: &quot;3&quot;,
@@ -835,8 +566,8 @@
       &quot;dataAiHint&quot;: &quot;eggs dairy&quot;,
       &quot;category&quot;: &quot;dairy&quot;,
       &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;
+      &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+      &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
     },
     {
       &quot;id&quot;: &quot;4&quot;,
@@ -847,8 +578,8 @@
       &quot;dataAiHint&quot;: &quot;spinach vegetables&quot;,
       &quot;category&quot;: &quot;vegetables&quot;,
       &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;
+      &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+      &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
     },
     {
       &quot;id&quot;: &quot;5&quot;,
@@ -859,8 +590,8 @@
       &quot;dataAiHint&quot;: &quot;almond milk&quot;,
       &quot;category&quot;: &quot;dairy&quot;,
       &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;
+      &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+      &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
     },
     {
       &quot;id&quot;: &quot;6&quot;,
@@ -871,8 +602,8 @@
       &quot;dataAiHint&quot;: &quot;chicken meat&quot;,
       &quot;category&quot;: &quot;meat&quot;,
       &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;
+      &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+      &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
     },
     {
       &quot;id&quot;: &quot;7&quot;,
@@ -883,8 +614,8 @@
       &quot;dataAiHint&quot;: &quot;rice grains&quot;,
       &quot;category&quot;: &quot;grains&quot;,
       &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;
+      &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+      &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
     },
     {
       &quot;id&quot;: &quot;8&quot;,
@@ -895,111 +626,14 @@
       &quot;dataAiHint&quot;: &quot;yogurt dairy&quot;,
       &quot;category&quot;: &quot;dairy&quot;,
       &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;
+      &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+      &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
     }
   ],
   &quot;total&quot;: 8,
   &quot;page&quot;: 1,
   &quot;limit&quot;: 10,
   &quot;totalPages&quot;: 1
-}</div>
-                    
-                
-            </div>
-        </div>
-        
-                
-        <div class="validation-results validation-passed">
-            <h4>Validation Results</h4>
-            
-            <!-- Status Code Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Status Code:</strong> ✓ Passed</p>
-                
-            </div>
-
-            <!-- Content Type Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Content Type:</strong> ✓ Passed</p>
-                
-            </div>
-
-            <!-- Body Validation -->
-            <div style="margin-bottom: 15px;">
-                <p><strong>Body Validation:</strong> ✓ Passed</p>
-                <p><strong>Reason:</strong> No body expectation set.</p>
-                
-                
-            </div>
-        </div>
-        
-                
-            </div>
-        </div>
-        
-        <div class="log-entry">
-            <div class="log-header">
-                <div class="log-title">
-                    <span class="arrow">▶</span>
-                    <span class="method method-post">POST</span>
-                    <span>http://localhost:3002/api/cart/user_123/items</span>
-                    <span class="status-code status-2xx">200 OK</span>
-                    <span class="validation-badge passed">
-                            ✓ Validation
-                        </span>
-                </div>
-                <div class="log-time">25/02/2026, 1:11:41 am</div>
-            </div>
-            <div class="log-body">
-                
-        <div class="request-response-grid">
-            <div class="request-section">
-                <div class="section-title">Request</div>
-                
-                    <p><strong>Method:</strong> POST</p>
-                    <p><strong>URL:</strong> http://localhost:3002/api/cart/user_123/items</p>
-                    
-                    
-                        <p><strong>Body:</strong></p>
-                        <div class="code-block">{
-  &quot;productId&quot;: &quot;1&quot;,
-  &quot;quantity&quot;: 2
-}</div>
-                    
-                
-            </div>
-            <div class="response-section">
-                <div class="section-title">Response</div>
-                
-                    <p><strong>Status:</strong> 200 - OK</p>
-                    <p><strong>Content Type:</strong> application/json; charset=utf-8</p>
-                    
-                    
-                        <p><strong>Body:</strong></p>
-                        <div class="code-block">{
-  &quot;id&quot;: &quot;d3270588-12ea-414f-a7a4-0f255803bc6c&quot;,
-  &quot;userId&quot;: &quot;user_123&quot;,
-  &quot;items&quot;: [
-    {
-      &quot;id&quot;: &quot;1&quot;,
-      &quot;name&quot;: &quot;Organic Apples&quot;,
-      &quot;price&quot;: 3.99,
-      &quot;description&quot;: &quot;Crisp and juicy organic apples, perfect for snacking or baking.&quot;,
-      &quot;image&quot;: &quot;https://placehold.co/300x200.png&quot;,
-      &quot;dataAiHint&quot;: &quot;apples fruit&quot;,
-      &quot;category&quot;: &quot;fruits&quot;,
-      &quot;inStock&quot;: true,
-      &quot;createdAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;updatedAt&quot;: &quot;2026-02-24T12:03:17.769Z&quot;,
-      &quot;quantity&quot;: 2,
-      &quot;addedAt&quot;: &quot;2026-02-24T12:11:41.487Z&quot;
-    }
-  ],
-  &quot;totalAmount&quot;: 7.98,
-  &quot;totalItems&quot;: 2,
-  &quot;createdAt&quot;: &quot;2026-02-24T12:11:18.126Z&quot;,
-  &quot;updatedAt&quot;: &quot;2026-02-24T12:11:41.488Z&quot;
 }</div>
                     
                 
@@ -1031,6 +665,212 @@
             <div style="margin-bottom: 15px;">
                 <p><strong>Content Type:</strong> ✓ Passed</p>
                 
+                    <div class="validation-comparison">
+                        <div class="expected-section">
+                            <div class="comparison-title">Expected:</div>
+                            <div class="comparison-value">application/json</div>
+                        </div>
+                        <div class="actual-section">
+                            <div class="comparison-title">Actual:</div>
+                            <div class="comparison-value">application/json; charset=utf-8</div>
+                        </div>
+                    </div>
+                
+            </div>
+
+            <!-- Body Validation -->
+            <div style="margin-bottom: 15px;">
+                <p><strong>Body Validation:</strong> ✓ Passed</p>
+                <p><strong>Reason:</strong> No body expectation set.</p>
+                
+                
+            </div>
+        </div>
+        
+                
+            </div>
+        </div>
+        
+        <div class="log-entry">
+            <div class="log-header">
+                <div class="log-title">
+                    <span class="arrow">▶</span>
+                    <span class="method method-get">GET</span>
+                    <span>http://localhost:3001/api/products/1</span>
+                    <span class="status-code status-2xx">200 OK</span>
+                    <span class="validation-badge passed">
+                            ✓ Validation
+                        </span>
+                </div>
+                <div class="log-time">25/02/2026, 11:22:10 am</div>
+            </div>
+            <div class="log-body">
+                
+        <div class="request-response-grid">
+            <div class="request-section">
+                <div class="section-title">Request</div>
+                
+                    <p><strong>Method:</strong> GET</p>
+                    <p><strong>URL:</strong> http://localhost:3001/api/products/1</p>
+                    
+                    
+                
+            </div>
+            <div class="response-section">
+                <div class="section-title">Response</div>
+                
+                    <p><strong>Status:</strong> 200 - OK</p>
+                    <p><strong>Content Type:</strong> application/json; charset=utf-8</p>
+                    
+                    
+                        <p><strong>Body:</strong></p>
+                        <div class="code-block">{
+  &quot;id&quot;: &quot;1&quot;,
+  &quot;name&quot;: &quot;Organic Apples&quot;,
+  &quot;price&quot;: 3.99,
+  &quot;description&quot;: &quot;Crisp and juicy organic apples, perfect for snacking or baking.&quot;,
+  &quot;image&quot;: &quot;https://placehold.co/300x200.png&quot;,
+  &quot;dataAiHint&quot;: &quot;apples fruit&quot;,
+  &quot;category&quot;: &quot;fruits&quot;,
+  &quot;inStock&quot;: true,
+  &quot;createdAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;,
+  &quot;updatedAt&quot;: &quot;2026-02-24T19:08:22.367Z&quot;
+}</div>
+                    
+                
+            </div>
+        </div>
+        
+                
+        <div class="validation-results validation-passed">
+            <h4>Validation Results</h4>
+            
+            <!-- Status Code Validation -->
+            <div style="margin-bottom: 15px;">
+                <p><strong>Status Code:</strong> ✓ Passed</p>
+                
+                    <div class="validation-comparison">
+                        <div class="expected-section">
+                            <div class="comparison-title">Expected:</div>
+                            <div class="comparison-value">200</div>
+                        </div>
+                        <div class="actual-section">
+                            <div class="comparison-title">Actual:</div>
+                            <div class="comparison-value">200</div>
+                        </div>
+                    </div>
+                
+            </div>
+
+            <!-- Content Type Validation -->
+            <div style="margin-bottom: 15px;">
+                <p><strong>Content Type:</strong> ✓ Passed</p>
+                
+                    <div class="validation-comparison">
+                        <div class="expected-section">
+                            <div class="comparison-title">Expected:</div>
+                            <div class="comparison-value">application/json</div>
+                        </div>
+                        <div class="actual-section">
+                            <div class="comparison-title">Actual:</div>
+                            <div class="comparison-value">application/json; charset=utf-8</div>
+                        </div>
+                    </div>
+                
+            </div>
+
+            <!-- Body Validation -->
+            <div style="margin-bottom: 15px;">
+                <p><strong>Body Validation:</strong> ✓ Passed</p>
+                <p><strong>Reason:</strong> No body expectation set.</p>
+                
+                
+            </div>
+        </div>
+        
+                
+            </div>
+        </div>
+        
+        <div class="log-entry">
+            <div class="log-header">
+                <div class="log-title">
+                    <span class="arrow">▶</span>
+                    <span class="method method-get">GET</span>
+                    <span>http://localhost:3001/api/health</span>
+                    <span class="status-code status-2xx">200 OK</span>
+                    <span class="validation-badge passed">
+                            ✓ Validation
+                        </span>
+                </div>
+                <div class="log-time">25/02/2026, 11:22:21 am</div>
+            </div>
+            <div class="log-body">
+                
+        <div class="request-response-grid">
+            <div class="request-section">
+                <div class="section-title">Request</div>
+                
+                    <p><strong>Method:</strong> GET</p>
+                    <p><strong>URL:</strong> http://localhost:3001/api/health</p>
+                    
+                    
+                
+            </div>
+            <div class="response-section">
+                <div class="section-title">Response</div>
+                
+                    <p><strong>Status:</strong> 200 - OK</p>
+                    <p><strong>Content Type:</strong> application/json; charset=utf-8</p>
+                    
+                    
+                        <p><strong>Body:</strong></p>
+                        <div class="code-block">{
+  &quot;status&quot;: &quot;healthy&quot;,
+  &quot;service&quot;: &quot;product-service&quot;,
+  &quot;timestamp&quot;: &quot;2026-02-24T22:22:21.662Z&quot;
+}</div>
+                    
+                
+            </div>
+        </div>
+        
+                
+        <div class="validation-results validation-passed">
+            <h4>Validation Results</h4>
+            
+            <!-- Status Code Validation -->
+            <div style="margin-bottom: 15px;">
+                <p><strong>Status Code:</strong> ✓ Passed</p>
+                
+                    <div class="validation-comparison">
+                        <div class="expected-section">
+                            <div class="comparison-title">Expected:</div>
+                            <div class="comparison-value">200</div>
+                        </div>
+                        <div class="actual-section">
+                            <div class="comparison-title">Actual:</div>
+                            <div class="comparison-value">200</div>
+                        </div>
+                    </div>
+                
+            </div>
+
+            <!-- Content Type Validation -->
+            <div style="margin-bottom: 15px;">
+                <p><strong>Content Type:</strong> ✓ Passed</p>
+                
+                    <div class="validation-comparison">
+                        <div class="expected-section">
+                            <div class="comparison-title">Expected:</div>
+                            <div class="comparison-value">application/json</div>
+                        </div>
+                        <div class="actual-section">
+                            <div class="comparison-title">Actual:</div>
+                            <div class="comparison-value">application/json; charset=utf-8</div>
+                        </div>
+                    </div>
+                
             </div>
 
             <!-- Body Validation -->
@@ -1050,7 +890,7 @@
         </section>
 
         <footer class="footer">
-            <p>Report generated at 25/02/2026, 1:11:58 am</p>
+            <p>Report generated at 25/02/2026, 11:22:51 am</p>
         </footer>
     </div>
 
