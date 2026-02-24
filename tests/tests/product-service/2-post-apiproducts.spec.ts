@@ -15,7 +15,8 @@ test.describe('POST /api/products', () => {
       image: 'https://example.com/images/banana.jpg',
       dataAiHint: 'fruit, organic, potassium',
       category: 'fruits',
-      inStock: true
+      inStock: true,
+      discount: 15
     };
 
     // Act
