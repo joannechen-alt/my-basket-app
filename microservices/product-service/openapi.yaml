@@ -1,0 +1,383 @@
+openapi: 3.0.0
+info:
+  title: Product Service API
+  version: 1.0.0
+  description: API documentation for the Product Management microservice
+  contact:
+    name: API Support
+    email: support@example.com
+
+servers:
+  - url: http://localhost:3001
+    description: Development server
+  - url: http://localhost:3000
+    description: API Gateway
+
+tags:
+  - name: Products
+    description: Product management endpoints
+  - name: Health
+    description: Health check endpoints
+
+paths:
+  /api/products:
+    get:
+      summary: Get all products
+      description: Retrieve a paginated list of products with optional filters
+      tags:
+        - Products
+      parameters:
+        - in: query
+          name: category
+          schema:
+            type: string
+          description: Filter by category
+        - in: query
+          name: minPrice
+          schema:
+            type: number
+          description: Minimum price filter
+        - in: query
+          name: maxPrice
+          schema:
+            type: number
+          description: Maximum price filter
+        - in: query
+          name: inStock
+          schema:
+            type: boolean
+          description: Filter by stock availability
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: Search term for product name/description
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 1
+          description: Page number
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+          description: Items per page
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductListResponse'
+        '400':
+          description: Invalid query parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+
+    post:
+      summary: Create a new product
+      description: Add a new product to the catalog
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '201':
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Invalid product data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+
+  /api/products/{id}:
+    get:
+      summary: Get product by ID
+      description: Retrieve a single product by its unique identifier
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      responses:
+        '200':
+          description: Product found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+
+    put:
+      summary: Update a product
+      description: Update an existing product by ID
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '200':
+          description: Product updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Invalid product data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+
+    delete:
+      summary: Delete a product
+      description: Remove a product from the catalog
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      responses:
+        '204':
+          description: Product deleted successfully
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+
+  /api/categories:
+    get:
+      summary: Get all categories
+      description: Retrieve a list of all available product categories
+      tags:
+        - Products
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  categories:
+                    type: array
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+
+  /api/health:
+    get:
+      summary: Health check
+      description: Check if the service is healthy
+      tags:
+        - Health
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+                  service:
+                    type: string
+                    example: product-service
+                  timestamp:
+                    type: string
+                    format: date-time
+
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - id
+        - name
+        - price
+        - description
+        - image
+        - dataAiHint
+      properties:
+        id:
+          type: string
+          description: Product unique identifier
+          example: '1'
+        name:
+          type: string
+          description: Product name
+          example: 'Organic Apples'
+        price:
+          type: number
+          format: float
+          description: Product price
+          example: 3.99
+        description:
+          type: string
+          description: Product description
+          example: 'Crisp and juicy organic apples, perfect for snacking or baking.'
+        image:
+          type: string
+          format: uri
+          description: Product image URL
+          example: 'https://placehold.co/300x200.png'
+        dataAiHint:
+          type: string
+          description: AI hint for recommendations
+          example: 'apples fruit'
+        category:
+          type: string
+          description: Product category
+          example: 'fruits'
+        inStock:
+          type: boolean
+          description: Stock availability
+          example: true
+        discount:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 100
+          description: Discount percentage (0-100)
+          example: 10
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation timestamp
+        updatedAt:
+          type: string
+          format: date-time
+          description: Last update timestamp
+
+    ProductInput:
+      type: object
+      required:
+        - name
+        - price
+        - description
+        - image
+        - dataAiHint
+      properties:
+        name:
+          type: string
+          minLength: 1
+          example: 'Organic Bananas'
+        price:
+          type: number
+          format: float
+          minimum: 0
+          example: 2.99
+        description:
+          type: string
+          minLength: 1
+          example: 'Fresh organic bananas'
+        image:
+          type: string
+          format: uri
+          example: 'https://placehold.co/300x200.png'
+        dataAiHint:
+          type: string
+          minLength: 1
+          example: 'bananas fruit'
+        category:
+          type: string
+          example: 'fruits'
+        inStock:
+          type: boolean
+          example: true
+        discount:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 100
+          example: 15
+
+    ProductListResponse:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        total:
+          type: number
+          example: 8
+        page:
+          type: number
+          example: 1
+        limit:
+          type: number
+          example: 20
+        totalPages:
+          type: number
+          example: 1
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          example: 'Error message'
+        details:
+          type: array
+          items:
+            type: object
