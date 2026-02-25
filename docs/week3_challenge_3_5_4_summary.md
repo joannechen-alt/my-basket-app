@@ -59,20 +59,6 @@ Critical/tired              → Manual or Skip
 - 100% AI code review accuracy
 - Clear thinking = specific prompts = safe code
 
-### 🤖 Daily AI Practice Slot
-**Time:** 4:00-4:30 PM, Monday-Friday (Minimum 15 mins)
-
-**Weekly Rotation:**
-| Day | Focus | Exercise |
-|-----|-------|----------|
-| Mon | Prompt Engineering | Write 3 vague vs 3 specific prompts, compare |
-| Tue | Code Review | Review AI PR, find improvement areas |
-| Wed | Test Generation | Generate tests, improve coverage to 90%+ |
-| Thu | Refactoring | Use AI to refactor, verify improvements |
-| Fri | Documentation | AI-assisted docs + weekly reflection |
-
-**Tracking:** `docs/ai-practice-log.md` (daily), `docs/ai-rhythm-calendar.md` (visual)
-
 ---
 
 ## 📈 ONE-DAY TRACKING RESULTS (Proof of Concept)
