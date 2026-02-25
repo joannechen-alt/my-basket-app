@@ -169,7 +169,7 @@ export class OrderService {
     const validTransitions: Record<OrderStatus, OrderStatus[]> = {
       [OrderStatus.PENDING]: [OrderStatus.CONFIRMED, OrderStatus.CANCELLED],
       [OrderStatus.CONFIRMED]: [OrderStatus.PROCESSING, OrderStatus.CANCELLED],
-      [OrderStatus.PROCESSING]: [OrderStatus.SHIPPED, OrderStatus.CANCELLED],
+      [OrderStatus.PROCESSING]: [OrderStatus.CONFIRMED, OrderStatus.SHIPPED, OrderStatus.CANCELLED], // Added CONFIRMED for payment re-authorization
       [OrderStatus.SHIPPED]: [OrderStatus.DELIVERED],
       [OrderStatus.DELIVERED]: [OrderStatus.REFUNDED],
       [OrderStatus.CANCELLED]: [],
